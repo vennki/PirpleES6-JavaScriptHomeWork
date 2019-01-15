@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>My Colorful Rectangles</title>
@@ -22,91 +21,91 @@
     <body onload="logRectIDs()">
         <div id="rectangleWrapper">
         </div>
-    </body>
-    <script>
-        const numOfRectangles = 10;
-        const divRectWrapper = document.getElementById("rectangleWrapper");
-        const spanTotalRect = document.getElementById("totalRectangles");
-
-        spanTotalRect.innerText = numOfRectangles;
-
-        for(let i = 1; i <= numOfRectangles; i++){
-            const divRect = document.createElement("div");
-            divRect.id = "div"+i;
-            divRect.className = "divClass";
-
-            const pRectColor = document.createElement("p");
-            pRectColor.id = "rectColor"+i;
+        <script>
+            const numOfRectangles = 10;
+            const divRectWrapper = document.getElementById("rectangleWrapper");
+            const spanTotalRect = document.getElementById("totalRectangles");
+    
+            spanTotalRect.innerText = numOfRectangles;
+    
+            for(let i = 1; i <= numOfRectangles; i++){
+                const divRect = document.createElement("div");
+                divRect.id = "div"+i;
+                divRect.className = "divClass";
+    
+                const pRectColor = document.createElement("p");
+                pRectColor.id = "rectColor"+i;
+                
+                const horizontalLine = document.createElement("hr");
+    
+                divRectWrapper.appendChild(divRect);
+                divRectWrapper.appendChild(pRectColor);
+                divRectWrapper.appendChild(horizontalLine);
+            }
+    
+            const divClassElements = divRectWrapper.querySelectorAll(".divClass");
+            for(let j = 1 ; j <= divClassElements.length ; j++){
+                const divElement = document.getElementById("div"+j);
+                setColor(divElement.id);
+                const pRectColorElement = document.getElementById("rectColor"+j);
+            }
+    
+            function setColor(divElemId){
+                switch(divElemId){
+                    case "div1":
+                    document.getElementById(divElemId).style.backgroundColor = "#E4FF33";
+                    document.getElementById("rectColor1").innerText = "#E4FF33";
+                    break;
+                    case "div2":
+                    document.getElementById(divElemId).style.backgroundColor = "#33DCFF";
+                    document.getElementById("rectColor2").innerText = "#33DCFF";
+                    break;
+                    case "div3":
+                    document.getElementById(divElemId).style.backgroundColor = "#33FF6D";
+                    document.getElementById("rectColor3").innerText = "#33FF6D";
+                    break;
+                    case "div4":
+                    document.getElementById(divElemId).style.backgroundColor = "#338EFF";
+                    document.getElementById("rectColor4").innerText = "#338EFF";
+                    break;
+                    case "div5":
+                    document.getElementById(divElemId).style.backgroundColor = "#C533FF";
+                    document.getElementById("rectColor5").innerText = "#C533FF";
+                    break;
+                    case "div6":
+                    document.getElementById(divElemId).style.backgroundColor = "#FF4C33";
+                    document.getElementById("rectColor6").innerText = "#FF4C33";
+                    break;
+                    case "div7":
+                    document.getElementById(divElemId).style.backgroundColor = "#FFE633";
+                    document.getElementById("rectColor7").innerText = "#FFE633";
+                    break;
+                    case "div8":
+                    document.getElementById(divElemId).style.backgroundColor = "#6233FF";
+                    document.getElementById("rectColor8").innerText = "#6233FF";
+                    break;
+                    case "div9":
+                    document.getElementById(divElemId).style.backgroundColor = "#D5DC65";
+                    document.getElementById("rectColor9").innerText = "#D5DC65";
+                    break;
+                    case "div10":
+                    document.getElementById(divElemId).style.backgroundColor = "#09138B";
+                    document.getElementById("rectColor10").innerText = "#09138B";
+                    break;
+                    default:
+                    break;
+                }
+            }
             
-            const horizontalLine = document.createElement("hr");
-
-            divRectWrapper.appendChild(divRect);
-            divRectWrapper.appendChild(pRectColor);
-            divRectWrapper.appendChild(horizontalLine);
-        }
-
-        const divClassElements = divRectWrapper.querySelectorAll(".divClass");
-        for(let j = 1 ; j <= divClassElements.length ; j++){
-            const divElement = document.getElementById("div"+j);
-            setColor(divElement.id);
-            const pRectColorElement = document.getElementById("rectColor"+j);
-        }
-
-        function setColor(divElemId){
-            switch(divElemId){
-                case "div1":
-                document.getElementById(divElemId).style.backgroundColor = "#E4FF33";
-                document.getElementById("rectColor1").innerText = "#E4FF33";
-                break;
-                case "div2":
-                document.getElementById(divElemId).style.backgroundColor = "#33DCFF";
-                document.getElementById("rectColor2").innerText = "#33DCFF";
-                break;
-                case "div3":
-                document.getElementById(divElemId).style.backgroundColor = "#33FF6D";
-                document.getElementById("rectColor3").innerText = "#33FF6D";
-                break;
-                case "div4":
-                document.getElementById(divElemId).style.backgroundColor = "#338EFF";
-                document.getElementById("rectColor4").innerText = "#338EFF";
-                break;
-                case "div5":
-                document.getElementById(divElemId).style.backgroundColor = "#C533FF";
-                document.getElementById("rectColor5").innerText = "#C533FF";
-                break;
-                case "div6":
-                document.getElementById(divElemId).style.backgroundColor = "#FF4C33";
-                document.getElementById("rectColor6").innerText = "#FF4C33";
-                break;
-                case "div7":
-                document.getElementById(divElemId).style.backgroundColor = "#FFE633";
-                document.getElementById("rectColor7").innerText = "#FFE633";
-                break;
-                case "div8":
-                document.getElementById(divElemId).style.backgroundColor = "#6233FF";
-                document.getElementById("rectColor8").innerText = "#6233FF";
-                break;
-                case "div9":
-                document.getElementById(divElemId).style.backgroundColor = "#D5DC65";
-                document.getElementById("rectColor9").innerText = "#D5DC65";
-                break;
-                case "div10":
-                document.getElementById(divElemId).style.backgroundColor = "#09138B";
-                document.getElementById("rectColor10").innerText = "#09138B";
-                break;
-                default:
-                break;
+            function logRectIDs(){
+                console.log("Here are the rectangle IDs")
+                const divRects = document.getElementsByClassName("divClass");
+                for(let k = 1; k <= divRects.length; k++){
+                    setTimeout(()=>{
+                        console.log(divRects[k-1].id);    
+                    },1000 * k)
+                }
             }
-        }
-        
-        function logRectIDs(){
-            console.log("Here are the rectangle IDs")
-            const divRects = document.getElementsByClassName("divClass");
-            for(let k = 1; k <= divRects.length; k++){
-                setTimeout(()=>{
-                    console.log(divRects[k-1].id);    
-                },1000 * k)
-            }
-        }
-    </script>
+        </script>
+    </body>
 </html>
