@@ -1,0 +1,56 @@
+.Auth{
+    font: bold;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    color: white;
+    border-color: palegreen;
+    width: 130px;
+    height: auto;
+    text-align: center;
+}
+.FormFormat{
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mandatory{
+    color:red;
+    font-size: 10px;
+    width: 250px;
+    height: 5px;
+    text-align: left;
+    vertical-align: middle;
+}
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+.item{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+.listItems{
+    margin-top: 20px;
+}
+.logout{
+    float: right;
+    position: relative;
+    margin-right: 40px;
+}
+.account{
+    float: right;
+    position: relative;
+    margin-right: 10px;
+}
+.checkbox{
+    vertical-align: middle ; 
+    width: 18px ; 
+    height:18px
+}
+.removeItem{
+    margin-left: 10px;
+}
