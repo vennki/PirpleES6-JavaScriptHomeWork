@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link href=".\css\ToDoList.css" rel="stylesheet" type="text/css" >
+        <title>To Do List Application</title>
+        <h1>To Do List Application</h1>
+        <h2>This is an application to keep a track of your to-do list</h2>
+        <div id="divHeader" class="hide">
+            <button id="logout" class="logout">Log out</button>
+            <button id="accountSettings" class="account">Account Settings</button>
+        </div>
+    </head>
+    <body>
+        <div id="divAuth" class="show">
+            <button id="SignUp" class="Auth">Sign Up</button>
+            <button id="Login" class="Auth">Log In</button>
+            <button id="clearStorage" class="Auth hide">Clear Storage</button>
+        </div>
+        <br />
+        <div id="divRegForm" class="FormFormat hide">
+            <p id="paraRegFormError" class="mandatory"></p>
+            <form id="formReg" method="POST">
+                <span id="RegistrationForm" style="font-size: 18px; color: blue ; font-weight: 900;">New User Registration Form</span>
+                <table id="tableRegForm">
+                    <br />
+                    <br />
+                    <tr id="row1Reg">
+                        <td id="datalabelRegFirstName"><label id="labelRegFNMandatory">*</label><label id="labelRegFirstName">First Name:</label></td>
+                        <td id="dataInputRegFirstName"><input id="inputRegFirstName"/></td>
+                        <td id="dataInputRegFNError"><p id="dataParaRegFN" class="mandatory"></p></td>
+                        
+                    </tr>
+                    <tr id="row2Reg">
+                        <td id="datalabelRegLastName"><label id="labelRegLNMandatory">*</label><label id="labelRegLastName">Last Name:</label></td>
+                        <td id="dataInputRegLastName"><input id="inputRegLastName"/></td>
+                        <td id="dataInputRegLNError"><p id="dataParaRegLN" class="mandatory"></p></td>
+                    </tr>
+                    <tr id="row3Reg">
+                        <td id="datalabelRegEmail"><label id="labelRegEmailMandatory">*</label><label id="labelRegEmail">Email:</label></td>
+                        <td id="dataInputRegEmail"><input id="inputRegEmail"/></td>
+                        <td id="dataInputRegEmailError"><p id="dataParaRegEmail" class="mandatory"></p></td>
+                    </tr>
+                    <tr id="row4Reg">
+                        <td id="datalabelRegPassword"><label id="labelRegPassMandatory">*</label><label id="labelRegPassword">Password:</label></td>
+                        <td id="dataInputRegPassword"><input id="inputRegPassword" type="password"/></td>
+                        <td id="dataInputRegPwdError"><p id="dataParaRegPwd" class="mandatory"></p></td>
+                    </tr>
+                    <tr id="row5Reg">
+                        <td id="dataInputRegTermsCheckbox">
+                            <br />
+                            <input id="inputRegTermsCheckbox" type="checkbox"/><label id="labelTerms">I agree to the Terms of Use</label>
+                        </td>
+                        <td id="dataInputRegTermsError">
+                            <br />
+                            <p id="dataParaRegTerms" class="mandatory"></p>
+                        </td>
+                    </tr>
+                    <tr id="row6Reg">
+                        <td id="dataRegSubmitButton">
+                            <br />
+                            <!-- <input id="InputSubmitRegForm" name="Register" type="button" class="Auth" value="Register"/> -->
+                            <button id="ButtonSubmitRegForm" class="Auth" type="submit">Register</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="divLoginForm" class="FormFormat hide">
+            <p id="paraLoginFormError" class="mandatory"></p>
+            <form id="formLogin" method="POST">
+                <span style="font-size: 18px; color: blue ; font-weight: 900;">Login using your credentials</span>
+                <table id="tableLoginForm">
+                    <br />
+                    <br />
+                    <tr id="row1Login">
+                        <td id="datalabelLoginEmail"><label id="labelLoginEmailMandatory">*</label><label id="labelLoginEmail">Email:</label></td>
+                        <td id="dataInputLoginEmail"><input id="inputLoginEmail" /></td>
+                        <td id="dataInputLoginEmailError"><p id="dataParaLoginEmail" class="mandatory"></p></td>
+                    </tr>
+                    <tr id="row2Login">
+                        <td id="datalabelLoginPassword"><label id="labelLoginPassMandatory">*</label><label id="labelLoginPassword">Password:</label></td>
+                        <td id="dataInputLoginPassword"><input id="inputLoginPassword" type="password"/></td>
+                        <td id="dataInputLoginPwdError"><p id="dataParaLoginPwd" class="mandatory"></p></td>
+                    </tr>
+                    <tr id="row3Login">
+                        <td id="dataLoginSubmitButton">
+                            <br />
+                            <!-- <input id="InputSubmitLoginForm" name="Log In" type="button" class="Auth" value="Log In" /> -->
+                            <button id="ButtonSubmitLoginForm" type="submit" class="Auth">Log In</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="divDashboard" class="hide">
+            <span style="font-size: 25px; color: blue ; font-weight: 900;">Dashboard</span>
+            <!-- <button id="logout" class="logout">Log out</button>
+            <button id="accountSettings" class="account">Account Settings</button> -->
+            <hr>
+            <div id="divHeading" class="show">
+                <span style="font-size: 20px; color: crimson; font-weight: 700; "><u>To-Do Lists</u></span>
+                <button style="margin-left: 10px" id="newList">Create New to-do List</button>
+            </div>
+        </div>
+        <div id="ToDoList" class="hide">
+            <ul id="Tasks" class="item show">
+                <!-- <li><a href="#">Test1</a></li> -->
+            </ul>
+        </div>
+        <div id="TaskDetails" class="item hide">
+
+        </div>
+        <p id="paraNewListError" class="mandatory"></p>
+        <div id="divList" class="hide">
+            <!-- <label id="labelListName" >Name of the list:</label>
+            <input id="inputListName" type="text" required/>
+            <ol id="divItems" class="listItems">
+                <li id="1">
+                    <input id="text1" type="text" required/>
+                    <input id="check1" type="checkbox" class="checkbox" />    
+                </li>
+            </ol> -->
+            
+            <!-- <div id="divItems" class="listItems">
+                <input id="text1" type="text" />
+                <input id="check1" type="checkbox" class="checkbox" />
+            </div> -->
+        </div>
+        <div id="AddSaveButtons" class="hide">
+            <br />
+            <button id="buttonAddItem">Add item</button>
+            <button id="buttonSaveList" type="submit">Save List</button>
+        </div>
+        <script src=".\js\bcrypt.js"></script>
+        <script src=".\js\TodoList.js"></script>
+    </body>
+</html>
